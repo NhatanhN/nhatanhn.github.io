@@ -1,0 +1,78 @@
+.window {
+    width: min(50vw, 50vh);
+    height: min(50vw, 50vh);
+    background-color: var(--gray);
+    border: outset 3px var(--border-gray);
+    transition: height 10ms ease-in-out, width 10ms ease-in-out, opacity 200ms ease-in-out;
+    overflow: auto;
+    resize: both;
+}
+
+.window iframe {
+    width: 100%;
+    height: calc(100% - 32px);
+    border: none;
+    display: block;
+}
+
+.window .iframe-overlay {
+    width: 100%;
+    height: calc(100% - 32px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.window .window-header {
+    width: 100%;
+    user-select: none;
+}
+
+.window-header {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    min-height: 2rem;
+    gap: 5px;
+}
+
+.window-header-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray);
+    color: var(--black);
+    height: 1.5rem;
+    width: 1.5rem;
+    border: outset 2px var(--border-gray);
+    border-radius: 3px;
+    cursor: pointer;
+
+}
+
+#welcome-window .maximize {
+    filter: brightness(1);
+    animation: blink 1000ms linear 6 alternate;
+}
+
+@keyframes blink {
+    to {
+        filter: brightness(1.5)
+    }
+}
+
+.window-header-button:hover,
+#welcome-window .maximize:hover {
+    filter: brightness(0.8);
+}
+
+@media (max-width: 600px) {
+    .window {
+        width: min(80vw, 80vh);
+        height: min(80vw, 80vh);
+    }
+}

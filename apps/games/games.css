@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #282828 #acacac;
+}
+
+:root {
+    --dark-blue: #24282F;
+    --darker-blue: #171D25;
+    --blue: #26B7FF;
+    --light-blue: #6ABDE6;
+    --gray: #606774;
+    --white: #F1F7FF;
+    --hover-highlight: #323A4B;
+}
+
+body {
+    background-color: var(--darker-blue);
+    font-family: "Nunito Sans", sans-serif;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 5px calc(5px + 2ch);
+    border-bottom: 1px solid var(--gray);
+    display: flex;
+    caret-color: transparent;
+}
+
+#back-button {
+    height: 22px;
+    padding: 0px 8px;
+    border-radius: 4px;
+}
+
+#back-button:hover {
+    cursor: pointer;
+    background-color: var(--hover-highlight);
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+section {
+    flex-grow: 1;
+    user-select: none;
+}
+
+#catalogue {
+    display: grid;
+    grid-template-columns: 16ch 1fr;
+    gap: 3px;
+    margin: 5px;
+}
+
+#catalogue>div {
+    background-color: var(--dark-blue);
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#games-list {
+    padding: 5px 0;
+}
+
+#games-list p {
+    margin-bottom: 1em;
+    padding: 0 5px;
+}
+
+#games-list p:hover {
+    background-color: var(--hover-highlight);
+    cursor: pointer;
+}
+
+#no-games-select {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    user-select: text;
+    caret-color: transparent;
+    height: 100%;
+}
+
+#no-games-select p {
+    position: relative;
+    top: -13px;
+}
+
+#games-select {
+    overflow: hidden;
+    place-items: center;
+    height: 100%;
+}
+
+#game-title {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    user-select: text;
+    caret-color: transparent;
+    font-size: large;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+#games-select img {
+    width: min(55vw, 55vh);
+    height: min(55vh, 55vh);
+}
+
+#play-button {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: large;
+    padding: 5px;
+    width: 150px;
+    border-radius: 3px;
+    background-color: #15ac15;
+    text-align: center;
+    transition: background-color 200ms linear;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+#play-button:hover {
+    cursor: pointer;
+    background-color: #1dd31d;
+}
+
+#snake {
+    place-items: center;
+}
+
+#snake>div {
+    height: min(80vw, 80vh);
+    width: min(80vw, 80vh);
+    min-height: 250px;
+    min-width: 250px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: repeat(21, 1fr);
+    padding: 7px;
+    gap: 3px;
+    border: 4px solid white;
+    background-color: black;
+    box-shadow: 0px 8px 17px 2px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12), 0px 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+
+#snake>div>p {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    padding: 0 1ch;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: large;
+    background-color: black;
+    color: white;
+    animation: blink 1.3s infinite alternate ease-in-out;
+}
+
+@keyframes blink {
+    from {
+        color: #ffffff;
+    }
+
+    to {
+        color: #ffffff96;
+    }
+}
+
+#snake>div>div {
+    width: 100%;
+    height: 100%;
+    background-color: #242424;
+}
+
+#snake>div>#game-over-screen {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    padding: 1ch;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: large;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: white;
+}
+
+#snake .snake-body {
+    background-color: white;
+}
+
+#snake .apple {
+    background-color: red;
+}
+
+#reset-game-prompt:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

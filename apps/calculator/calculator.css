@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #282828 #acacac;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#color-buttons {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: flex;
+    gap: 10px;
+    user-select: none;
+}
+
+#color-buttons div {
+    border: 2px outset white;
+    border-radius: 4px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#color-buttons div:active {
+    border: 2px inset white;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+    border: 4px solid #f1f1f1;
+    padding: 20px 30px;
+    background-color: rgb(155, 155, 155);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+#buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    flex-grow: 1;
+    place-items: center;
+    user-select: none;
+}
+
+#buttons div {
+    border: 4px outset gray;
+    border-radius: 4px;
+    padding: 3px 10px;
+    background-color: rgb(117, 117, 117);
+    color: rgb(238, 238, 238);
+    cursor: pointer;
+}
+
+#buttons div:active {
+    border: 4px inset gray;
+}
+
+#buttons .empty-button {
+    border: none;
+    padding: 0;
+}
+
+#screen {
+    margin: 10px 0 30px 0;
+    padding: 5px;
+    width: 185px;
+    font-size: 22px;
+    text-align: right;
+    font-family: "Bitcount Single", system-ui;
+    background-color: #e6e6e6;
+    border: 2px inset gray;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+#output {
+    text-align: right;
+    caret-color: transparent;
+}
+
+#prev-function {
+    position: relative;
+    top: -6px;
+    left: -2px;
+    user-select: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}

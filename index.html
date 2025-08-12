@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhatanh's Website</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./desktop-placement.css">
+    <link rel="stylesheet" href="./windowed-apps.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="screen">
+        <div id="desktop">
+            <div id="desktop-info" tabindex="0" class="icon">
+                <img src="./obj/info.png" alt="question mark symbol" height="60" width="60" />
+                <p>info</p>
+            </div>
+            <div id="desktop-portfolio" tabindex="0" class="icon">
+                <img src="./obj/folder.png" alt="folder" height="60" width="60" style="filter: brightness(.9);" />
+                <p>portfolio</p>
+            </div>
+            <div id="desktop-calculator" tabindex="0" class="icon">
+                <img src="./obj/calculator.png" alt="calculator" height="60" width="60" style="object-fit: cover;" />
+                <p>calculator</p>
+            </div>
+            <div id="desktop-duck" tabindex="0" class="icon">
+                <img id="duck-icon" src="./obj/duck.png" alt="duck" height="60" width="60" />
+                <p>quack</p>
+                <audio id="quack-sfx" src="obj/quack.mp3" hidden></audio>
+            </div>
+            <div id="desktop-games" tabindex="0" class="icon">
+                <img src="./obj/game.png" alt="video game controller" height="60" width="60" />
+                <p>games</p>
+            </div>
+        </div>
+
+        <div id="taskbar">
+            <div id="taskbar-start" title="open/close start menu button">
+                <b>Start</b>
+            </div>
+            <div id="taskbar-windows">
+            </div>
+            <div id="taskbar-time">
+                4:55 PM
+            </div>
+        </div>
+
+        <div id="screen-overlay">
+            <div id="start-menu" style="height: 0; opacity: 0;">
+                <div id="start-menu-pattern"></div>
+                <div id="start-menu-items">
+                    <div tabindex="0">
+                        <img src="./obj/welcome.svg" height="30" width="30" />
+                        Welcome
+                    </div>
+                    <div>
+                        <img src="./obj/code.svg" height="30" width="30" />
+                        <a href="https://github.com/NhatanhN" target="_blank">Github link</a>
+                    </div>
+                    <p class="flex-grow-1"></p>
+                </div>
+            </div>
+
+            <div id="welcome-window" class="window" style="display: none; opacity: 0">
+                <div class="window-header">
+                    Welcome
+                    <div tabindex="0" class="window-header-button maximize" title="maximize window button">
+                        <img src="./obj/windows.svg" width="18" height="18">
+                    </div>
+                    <div tabindex="0" class="window-header-button close" title="close window button">
+                        <img src="./obj/cross.svg" width="20" height="20">
+                    </div>
+                </div>
+                <div class="iframe-overlay"></div>
+                <!-- these iframe's src attributes are filled with the function openWindow in script.js -->
+                <iframe></iframe>
+            </div>
+
+            <div id="info-window" class="window" style="display: none; opacity: 0">
+                <div class="window-header">
+                    Info
+                    <div tabindex="0" class="window-header-button maximize" title="maximize window button">
+                        <img src="./obj/windows.svg" width="18" height="18">
+                    </div>
+                    <div tabindex="0" class="window-header-button close" title="close window button">
+                        <img src="./obj/cross.svg" width="20" height="20">
+                    </div>
+                </div>
+                <div class="iframe-overlay"></div>
+                <iframe></iframe>
+            </div>
+
+            <div id="portfolio-window" class="window" style="display: none; opacity: 0">
+                <div class="window-header">
+                    Portfolio
+                    <div tabindex="0" class="window-header-button maximize" title="maximize window button">
+                        <img src="./obj/windows.svg" width="18" height="18">
+                    </div>
+                    <div tabindex="0" class="window-header-button close" title="close window button">
+                        <img src="./obj/cross.svg" width="20" height="20">
+                    </div>
+                </div>
+                <div class="iframe-overlay"></div>
+                <iframe></iframe>
+            </div>
+
+            <div id="calculator-window" class="window" style="display: none; opacity: 0">
+                <div class="window-header">
+                    Calculator
+                    <div tabindex="0" class="window-header-button maximize" title="maximize window button">
+                        <img src="./obj/windows.svg" width="18" height="18">
+                    </div>
+                    <div tabindex="0" class="window-header-button close" title="close window button">
+                        <img src="./obj/cross.svg" width="20" height="20">
+                    </div>
+                </div>
+                <div class="iframe-overlay"></div>
+                <iframe></iframe>
+            </div>
+
+            <div id="games-window" class="window" style="display: none; opacity: 0">
+                <div class="window-header">
+                    Games
+                    <div tabindex="0" class="window-header-button maximize" title="maximize window button">
+                        <img src="./obj/windows.svg" width="18" height="18">
+                    </div>
+                    <div tabindex="0" class="window-header-button close" title="close window button">
+                        <img src="./obj/cross.svg" width="20" height="20">
+                    </div>
+                </div>
+                <div class="iframe-overlay"></div>
+                <iframe></iframe>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script src="./script.js"></script>
+
+</html>

@@ -1,0 +1,16 @@
+#desktop-portfolio {
+    grid-row-start: 2;
+}
+
+#desktop-calculator {
+    grid-row-end: -1;
+}
+
+#desktop-duck {
+    grid-column-end: -1;
+}
+
+#desktop-games {
+    grid-column-end: -1;
+    grid-row-end: -1;
+}

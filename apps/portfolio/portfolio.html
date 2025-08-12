@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="./portfolio.css">
+</head>
+
+<body>
+    <nav>
+        <a href="#movie-browser" style="background-color: #dddddd">Movie Browser</a>
+        <a href="#location-tracker">Location Tracker</a>
+        <a href="#note-taker">Note Taker</a>
+    </nav>
+    <section id="movie-browser">
+        <h2>Movie Browser</h2>
+        <img src="./assets/expo-demo.gif">
+        <p>
+            A mobile app that can track the movies you've watched or want to watch.
+            Can also browse movie information from a database.
+        </p>
+        <div class="clear"></div>
+        <h3>Project Demo <span>▶</span></h3>
+        <div id="expo-demo" class="collapsible" style="opacity: 0; height: 0; display: none">
+            <div class="flex-grow-1"></div>
+            <div id="expo-demo-text">
+                Bring to a bigger screen by clicking on the <img src="./assets/open-in-new-tab.png" height=17
+                    alt="open in new tab image"> button.
+            </div>
+            <div class="flex-grow-1"></div>
+            <div data-snack-id="@hatanh/movie-browser" data-snack-platform="android" data-snack-preview="true"
+                data-snack-theme="dark"
+                style="overflow:hidden;background:#0C0D0E;border:1px solid var(--color-border);border-radius:4px;height:505px;width:100%">
+            </div>
+            <script async src="https://snack.expo.dev/embed.js"></script>
+        </div>
+        <h3>Technologies Used <span>▶</span></h3>
+        <div id="expo-tech-used" class="collapsible" style="opacity: 0; height: 0; display: none">
+            <ul>
+                <li>javascript</li>
+                <li>react native</li>
+                <li><a href="https://www.omdbapi.com/" target="_blank">OMDb's free API</a></li>
+            </ul>
+        </div>
+    </section>
+    <section id="location-tracker">
+        <h2>Location Tracker</h2>
+        <img src="./assets/location-tracker-ui.jpg">
+        <p>
+            Pings your device's location 4 times a day and uploads it to a database. Automatically
+            generated credentials can be used to view your data only.
+        </p>
+        <div class="clear"></div>
+        <h3>Technologies Used <span>▶</span></h3>
+        <div class="collapsible" style="opacity: 0; height: 0; display: none">
+            <ul>
+                <li>javascript</li>
+                <li>react native</li>
+                <li>java</li>
+                <li>amazon web services</li>
+                <ul>
+                    <li>dynamodb (database)</li>
+                    <li>lambda (server)</li>
+                </ul>
+            </ul>
+        </div>
+    </section>
+    <section id="note-taker">
+        <h2>Note Taker</h2>
+        <img src="./assets/note-taker.gif">
+        <div class="clear"></div>
+        <p>
+            A website with a text editor that support image insertion.
+            Allows you to take notes and save them to your account, as well export them to a .pdf file.
+        </p>
+        <div class="clear"></div>
+        <h3>Technologies Used <span>▶</span></h3>
+        <div class="collapsible" style="opacity: 0; height: 0; display: none">
+            <ul>
+                <li>javascript</li>
+                <li>react</li>
+                <li>node.js</li>
+                <li>sqlite</li>
+                <li>json web tokens</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <a target="_blank" href="https://github.com/NhatanhN" title="github link">
+            <img src="./assets/github-mark.svg" alt="github logo link" height="35" width="35" />
+        </a>
+    </footer>
+</body>
+<script src="./portfolio.js"></script>
+
+</html>

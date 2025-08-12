@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+
+    <link rel="stylesheet" href="./games.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,500;1,6..12,500&&family=Pixelify+Sans&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <p>Library</p>
+        <div class="flex-grow-1"></div>
+        <div id="back-button" title="back button" style="display: none;">
+            <img src="./assets/back.svg" alt="a back arrow button" width="22" height="22">
+        </div>
+    </header>
+    <section id="catalogue">
+        <div id="games-list">
+            <p id="snake-list-item">Snake</p>
+        </div>
+        <div id="games-detail">
+            <div id="no-games-select">
+                <p>
+                    Select a game on the left to play
+                </p>
+            </div>
+            <div id="games-select" style="display: none;">
+                <p id="game-title"></p>
+                <img src="./assets/snake.png" alt="picture of a snake game">
+                <div id="play-button">
+                    ▶ PLAY
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="snake" style="display: none;">
+        <div>
+            <p>Press any arrow key to start</p>
+            <div id="game-over-screen" style="display: none;">
+                GAME OVER! <br>
+                Your score: <span></span> <br>
+                <span id="reset-game-prompt">Click here to play again</span>
+            </div>
+            
+        </div>
+    </section>
+</body>
+
+<script src="./games.js"></script>
+
+</html>
