@@ -13,6 +13,7 @@ appDirButton.addEventListener("click", e => {
 
     appDirButton.style.borderBottom = "none"
     appDirButton.style.backgroundColor = "#dddddd"
+    pageInfo.style.position = ""
     appDir.style.display = "block"
     setTimeout(() => {
         appDir.style.opacity = 1
@@ -43,6 +44,7 @@ pageInfoButton.addEventListener("click", e => {
 
     setTimeout(() => {
         appDir.style.display = "none"
+        pageInfo.style.position = "static"
         playingAnim = false
     }, 130)
 })
