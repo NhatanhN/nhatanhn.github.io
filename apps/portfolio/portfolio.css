@@ -88,6 +88,7 @@ h3>span {
     display: inline-block;
     transition: transform 400ms ease-in-out;
     z-index: -1;
+    position: relative;
 }
 
 section>img {
