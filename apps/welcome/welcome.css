@@ -104,6 +104,16 @@ body {
     margin: 0px calc(45px + 15vw);
 }
 
+#portfolio-link {
+    color: rgb(20, 88, 214);
+    user-select: none;
+}
+
+#portfolio-link:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, .1);
+}
+
 #landscape-img-container img {
     width: 600px;
     min-width: 200px;

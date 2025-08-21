@@ -1,57 +1,35 @@
-const navLinkMovie = document.querySelector('a[href="#movie-browser"]')
-const navLinkLocation = document.querySelector('a[href="#location-tracker"]')
-const navLinkNote = document.querySelector('a[href="#note-taker"]')
+const h3s = document.querySelectorAll("section>h3")
+const collapsibles = document.querySelectorAll(".collapsible")
 
-navLinkMovie.addEventListener("click", e => {
-    navLinkMovie.style.backgroundColor = "#dddddd"
-    navLinkLocation.style.backgroundColor = ""
-    navLinkNote.style.backgroundColor = ""
-})
-
-navLinkLocation.addEventListener("click", e => {
-    navLinkMovie.style.backgroundColor = ""
-    navLinkLocation.style.backgroundColor = "#dddddd"
-    navLinkNote.style.backgroundColor = ""
-})
-
-navLinkNote.addEventListener("click", e => {
-    navLinkMovie.style.backgroundColor = ""
-    navLinkLocation.style.backgroundColor = ""
-    navLinkNote.style.backgroundColor = "#dddddd"
-})
-
-const h3s = document.querySelectorAll("section > h3")
-const divs = document.querySelectorAll("h3 + div")
 for (let i = 0; i < h3s.length; i++) {
-    let isPlayingAnimation = false;
-    const h3 = h3s[i]
-    const div = divs[i]
-    const arrow = h3s[i].querySelector("span")
-    h3.addEventListener("click", e => {
-        if (div.style.display == "none") {
-            if (isPlayingAnimation) return
-            isPlayingAnimation = true
-            setTimeout(() => {
-                isPlayingAnimation = false
-            }, 400)
+    // makes each h3 tag a clickable toggle for its accompanying .collapsible 
+    // element
+    let isAnimPlaying = false
+    h3s[i].addEventListener("click", e => {
+        if (isAnimPlaying) return
+        isAnimPlaying = true
 
-            div.style.display = ""
-            arrow.style.transform = "rotate(0.25turn)"
+        const span = h3s[i].children[0]
+        const collapsible = collapsibles[i]
+        if (collapsible.style.display == "none") {
+            span.style.transform = "rotate(90deg)"
+
+            collapsible.style.display = ""
             setTimeout(() => {
-                div.style.height = ""
-                div.style.opacity = "1"
+                collapsible.style.height = ""
+                collapsible.style.opacity = "1"
             }, 5)
         } else {
-            if (isPlayingAnimation) return
-            isPlayingAnimation = true
-
-            div.style.height = "0"
-            div.style.opacity = "0"
-            arrow.style.transform = ""
+            span.style.transform = ""
+            collapsible.style.height = "0"
+            collapsible.style.opacity = ""
             setTimeout(() => {
-                div.style.display = "none"
-                isPlayingAnimation = false
-            }, 397)
+                collapsible.style.display = "none"
+            }, 400)
         }
+
+        setTimeout(() => {
+            isAnimPlaying = false
+        }, 400)
     })
 }

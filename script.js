@@ -273,7 +273,7 @@ function addWindowToTaskbar(appId) {
  * Opens the specified window, making it visible, adding it to the taskbar, and
  * adding it to the window stack
  */
-function openWindow(appId, top = 0, left = 0) {
+function openWindow(appId, top = 15, left = 15) {
     const window = document.getElementById(`${appId}-window`)
 
     if (window.style.display == "block") { // if window is already open
