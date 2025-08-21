@@ -57,6 +57,7 @@ body {
     background: url(./obj/screentile.png);
     pointer-events: none;
     z-index: 1000;
+    image-rendering: pixelated;
 }
 
 @keyframes glow {
