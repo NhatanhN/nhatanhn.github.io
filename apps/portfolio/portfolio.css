@@ -189,12 +189,23 @@ div[data-snack-id] {
 }
 
 #movie-browser-tech-used ul,
-#location-tracker>.collapsible>ul,
-#note-taker>.collapsible>ul {
+.collapsible>ul {
     padding: 1ch 3ch;
 }
 
 /* movie browser section end */
+
+/* file viewer section start */
+
+#file-viewer>.collapsible {
+    height: 80px;
+}
+
+img[src="./assets/file-viewer.gif"] {
+    width: 320px;
+}
+
+/* file viewer section end */
 
 /* location tracker section */
 

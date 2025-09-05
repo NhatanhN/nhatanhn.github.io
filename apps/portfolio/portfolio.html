@@ -18,6 +18,7 @@
     <h4 id="nav-header">Navigation</h4>
     <nav>
         <a href="#movie-browser">Movie Browser</a>
+        <a href="#file-viewer">File Viewer</a>
         <a href="#location-tracker">Location Tracker</a>
         <a href="#note-taker">Note Taker</a>
     </nav>
@@ -50,6 +51,28 @@
                 <li>javascript</li>
                 <li>react native</li>
                 <li><a href="https://www.omdbapi.com/" target="_blank">OMDb's free API</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="file-viewer">
+        <h2>File Viewer</h2>
+        <div class="description">
+            <p>
+                A Spring Boot server that allows for file retrieval and storage. Access is controlled by a user's access
+                level, with low access levels meaning fewer files you have permission to view.
+                Also does stuff like connect to a MySql database, encrypt (and decrypt) files on disk, and exposes a
+                REST api to communicate with.
+            </p>
+            <img src="./assets/file-viewer.gif">
+        </div>
+
+        <h3>Technologies Used <span>▶</span></h3>
+        <div class="collapsible" style="display: none; height: 0">
+            <ul>
+                <li>java</li>
+                <li>spring boot</li>
+                <li>mysql</li>
             </ul>
         </div>
     </section>
@@ -107,6 +130,6 @@
         </a>
     </footer>
 </body>
-<script src="./portfolio.js"></script> 
+<script src="./portfolio.js"></script>
 
 </html>
