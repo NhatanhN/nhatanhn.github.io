@@ -197,6 +197,15 @@ div[data-snack-id] {
 
 /* file viewer section start */
 
+#file-viewer .description span {
+    display: none;
+    white-space: nowrap;
+    font-size: 14px;
+    position: relative;
+    bottom: -19px;
+    right: -16vw;
+}
+
 #file-viewer>.collapsible {
     height: 80px;
 }
@@ -251,5 +260,11 @@ footer {
 
     footer {
         display: block;
+    }
+}
+
+@media (max-width: 800px) {
+    #file-viewer .description span {
+        display: inline;
     }
 }
