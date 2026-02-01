@@ -214,14 +214,15 @@ function initWindows() {
             return
         }
 
-        item.addEventListener("click", e =>
+        item.addEventListener("click", e => {
             openWindow(item.innerText.toLowerCase())
+        }
         )
     })
 
     ignoreList = ["duck"]
     const prefix = "desktop-"
-    document.querySelectorAll("#desktop div").forEach(shortcut => {
+    document.querySelectorAll("#desktop .icon").forEach(shortcut => {
         const appId = shortcut.id.substring(prefix.length)
         if (ignoreList.includes(appId)) {
             return
@@ -276,12 +277,12 @@ function addWindowToTaskbar(appId) {
 function openWindow(appId, top = 15, left = 15) {
     const window = document.getElementById(`${appId}-window`)
 
-    if (window.style.display == "block") { // if window is already open
+    if (window.style.opacity == "1") { // if window is already open
         sendToFront(`${appId}-window`)
         return
     }
 
-    window.style.display = "block"
+    window.style.display = ""
     window.style.top = `${top}px`
     window.style.left = `${left}px`
     setTimeout(() => {
