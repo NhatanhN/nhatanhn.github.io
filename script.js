@@ -12,7 +12,8 @@ const appTable = {
     info: "./apps/info/info.html",
     calculator: "./apps/calculator/calculator.html",
     games: "./apps/games/games.html",
-    portfolio: "./apps/portfolio/portfolio.html"
+    portfolio: "./apps/portfolio/portfolio.html",
+    shaders: "./apps/shaders/shaders.html"
 }
 
 

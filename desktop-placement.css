@@ -14,3 +14,8 @@
     grid-column-end: -1;
     grid-row-end: -1;
 }
+
+#desktop-shaders {
+    grid-column-end: -1;
+    grid-row-start: 2;
+}

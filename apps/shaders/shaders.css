@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #282828 #acacac;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    place-items: center;
+    margin: 8px 4px;
+    min-height: calc(100vh - 16px);
+}
+
+canvas {
+    min-width: 292px;
+    min-height: 292px;
+    border: inset 4px lightgray;
+    background-color: white;
+    touch-action: pinch-zoom;
+}
+
+body>div {
+    display: flex;
+    flex-direction: column;
+    margin: 8ch 2ch;
+}
+
+body>div>div {
+    text-align: center;
+}
+
+button {
+    border: outset 5px ivory;
+    background: ivory;
+    width: 10ch;
+    font-size: large;
+    margin: 0 .5ch;
+}
+
+button:hover {
+    cursor: pointer;
+    filter: brightness(.8);
+}
+
+button:active {
+    border: inset 5px ivory;
+}
+
+h2 {
+    font-family: "Micro 5", sans-serif;
+    background: linear-gradient(90deg, rgba(9, 9, 121, 1) 0%, rgba(1, 184, 236, 1) 19%, rgba(0, 81, 255, 1) 42%, rgba(175, 1, 238, 1) 83%, rgba(9, 9, 121, 1) 100%);
+    background-clip: text;
+    color: transparent;
+    animation: moveBackground 10s infinite alternate linear;
+    font-size: 32px;
+    text-align: center;
+}
+
+@keyframes moveBackground {
+    from {
+        background-position: 0px;
+    }
+
+    to {
+        background-position: 600px;
+    }
+}
+
+textarea {
+    height: 300px;
+    padding: 1ch 2ch;
+    font-size: large;
+    color: ivory;
+    background-color: #000000ba;
+    border: 3px solid slategray;
+    scrollbar-width: thin;
+    resize: vertical;
+}
+
+@media (max-width: 700px) {
+    body {
+        grid-template-columns: unset;
+    }
+
+    body>div {
+        display: flex;
+        flex-direction: column;
+        margin: 4ch 2ch;
+    }
+
+    textarea {
+        width: 80vw;
+    }
+}

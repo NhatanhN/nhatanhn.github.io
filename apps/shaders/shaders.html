@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./shaders.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
+
+    <title>shaders</title>
+</head>
+
+<body>
+    <canvas></canvas>
+    <div>
+        <div>
+            <button id="prev-shader">←</button>
+            <button id="next-shader">→</button>
+        </div>
+        <h2>fragment shader source</h2>
+        <textarea disabled>#version 300 es
+precision mediump float;
+
+in vec2 coord;
+in float time;
+in vec4 mouse;
+in vec2 resolution;
+
+out vec4 color;
+void main(void) {
+	float ar = resolution.x/resolution.y;
+	float rows = 35.;
+	vec2 sc = (vec2(coord.x, coord.y) + 1.)/2.;
+	sc.x *= ar;
+	vec2 grid = fract(sc * rows);
+	vec2 cell = trunc(sc * rows);
+	cell.x /= ar;
+	cell /= rows;
+
+	float d = (distance(vec2(.5), grid));
+	float r = fract(((time*.09)-abs(cell.x-.5)-cell.y)/.4);
+	vec3 c = vec3(1.);
+	if (d > r - .05 && d < r + .05) {
+		c *= vec3(1.);
+	} else {
+		c *= vec3(0.);
+	}
+
+	c[0] *= ((1. - cell.x) + (1. - cell.y))/2.;
+	c[1] *= cell.x;
+	c[2] *= cell.y;
+
+	color = vec4(c, 1.);
+}</textarea>
+    </div>
+</body>
+
+<script src="shaders.js"></script>
+
+</html>

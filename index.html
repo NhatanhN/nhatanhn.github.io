@@ -40,6 +40,10 @@
                 <img src="./obj/game.png" alt="video game controller" height="60" width="60" />
                 <p>games</p>
             </div>
+            <div id="desktop-shaders" tabindex="0" class="icon">
+                <img src="./obj/cube.png" alt="a cube" height="60" width="60" />
+                <p>shaders</p>
+            </div>
 
             <!-- windows -->
             <div id="screen-overlay">
@@ -116,6 +120,20 @@
                 <div id="games-window" class="window" style="display: none; opacity: 0">
                     <div class="window-header">
                         Games
+                        <div tabindex="0" class="window-header-button maximize" title="maximize window button">
+                            <img src="./obj/windows.svg" width="18" height="18">
+                        </div>
+                        <div tabindex="0" class="window-header-button close" title="close window button">
+                            <img src="./obj/cross.svg" width="20" height="20">
+                        </div>
+                    </div>
+                    <div class="iframe-overlay"></div>
+                    <iframe></iframe>
+                </div>
+
+                <div id="shaders-window" class="window" style="display: none; opacity: 0">
+                    <div class="window-header">
+                        shaders
                         <div tabindex="0" class="window-header-button maximize" title="maximize window button">
                             <img src="./obj/windows.svg" width="18" height="18">
                         </div>
