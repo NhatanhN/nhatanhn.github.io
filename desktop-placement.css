@@ -19,3 +19,8 @@
     grid-column-end: -1;
     grid-row-start: 2;
 }
+
+#desktop-poker {
+    grid-column: -3/-2;
+    grid-row: -2/-1;
+}

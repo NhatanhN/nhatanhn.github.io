@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./poker.css">
+
+    <title>poker</title>
+</head>
+
+<body>
+    <div id="welcome-screen">
+        <div>
+            <p>Poker</p>
+            <div id="welcome-btn-container">
+                <button id="btn-solo">
+                    play solo
+                </button>
+                <button id="btn-lobby" disabled style="cursor: not-allowed;">
+                    join lobby
+                </button>
+                <button id="btn-attrib">
+                    attributions
+                </button>
+            </div>
+            <div id="welcome-decoration"></div>
+        </div>
+    </div>
+
+    <div id="lobby-select" style="display: none;">
+        <button id="btn-lobby-back">back</button>
+        <p>work in progress |ω・）</p>
+
+    </div>
+
+    <div id="game" style="display: none;">
+        <button id="btn-leave">leave lobby</button>
+        <div>
+            <div id="g-dealer"><img src="./assets/diamond.svg">
+                <p>Dealer</p>
+            </div>
+            <div id="g-table">
+                <div id="table-card-1" class="card"></div>
+
+                <div id="table-card-2" class="card"></div>
+                <div id="table-card-3" class="card"></div>
+                <div id="table-card-4" class="card"></div>
+                <div id="table-card-5" class="card"></div>
+                <div id="table-card-6" class="card"></div>
+
+                <div id="table-card-7" class="card"></div>
+                <div id="table-card-8" class="card"></div>
+
+                <div id="table-card-9" class="card"></div>
+                <div id="table-card-10" class="card"></div>
+
+                <div id="table-card-11" class="card"></div>
+                <div id="table-card-12" class="card"></div>
+
+                <div id="table-card-13" class="card"></div>
+                <div id="table-card-14" class="card"></div>
+                <div id="decision-window">
+                    <button id="decision-ready" style="display: none;">ready</button>
+                    <button id="decision-check" style="display: none;">check</button>
+                    <button id="decision-bet" style="display: none;">bet</button>
+                    <button id="decision-call" style="display: none;">call</button>
+                    <button id="decision-raise" style="display: none;">raise</button>
+                    <button id="decision-fold" style="display: none;">fold</button>
+                    <div id="bet-select" style="opacity: 0; pointer-events: none;">
+                        <div>Select your bet:</div>
+                        <input type="range" min="0" max="10" step="1">
+                        <button id="bet-select-back">Back</button>
+                        <button id="bet-select-confirm">Confirm</button>
+                    </div>
+                </div>
+            </div>
+            <div id="g-p1">
+                <img src="./assets/cat.svg">
+                <p>You</p>
+                <div class="player-info"></div>
+            </div>
+            <div id="g-p2">
+                <img src="./assets/crow.svg">
+                <p>Crow</p>
+                <div class="player-info"></div>
+            </div>
+            <div id="g-p3">
+                <img src="./assets/dog.svg">
+                <p>Dog</p>
+                <div class="player-info"></div>
+            </div>
+            <div id="g-p4">
+                <img id="mouse" class="mouse" src="./assets/mouse.svg">
+                <p>Mouse</p>
+                <div class="player-info"></div>
+            </div>
+            <div id="g-toast"></div>
+            <div id="g-toast-2"></div>
+            <div id="g-hand">
+                <div id="hand-1" class="card"></div>
+                <div id="hand-2" class="card"></div>
+            </div>
+            <div id="g-flop">
+                <div id="flop-1" class="card" style="display: none;"></div>
+                <div id="flop-2" class="card" style="display: none;"></div>
+                <div id="flop-3" class="card" style="display: none;"></div>
+                <div id="flop-4" class="card" style="display: none;"></div>
+                <div id="flop-5" class="card" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="attributions" style="display: none;">
+        <button id="btn-attributions-back">back</button>
+        <h1>Attributions</h1>
+        <dl>
+            <dt>Cat Icon, Crow Icon, Diamond Icon</dt>
+            <dd>Dazzle UI</dd>
+            <dd>Vectors and icons by <a href="https://dazzleui.gumroad.com/l/dazzleiconsfree?ref=svgrepo.com"
+                    target="_blank">Dazzle Ui</a> in CC Attribution License via <a href="https://www.svgrepo.com/"
+                    target="_blank">SVG Repo</a></dd>
+
+            <dt>Dog Icon</dt>
+            <dd>SVG Repo</dd>
+
+            <dt>Mouse Icon</dt>
+            <dd>vectordoodle</dd>
+            <dd>Vectors and icons by <a href="https://vectordoodle.gumroad.com/l/FOCLd?ref=svgrepo.com"
+                    target="_blank">Vectordoodle</a> in CC Attribution License via <a href="https://www.svgrepo.com/"
+                    target="_blank">SVG Repo</a></dd>
+        </dl>
+    </div>
+</body>
+
+<script src="./poker.js"></script>
+<script src="./poker_local_server.js"></script>
+
+</html>
