@@ -414,7 +414,6 @@ async function start_local_server() {
 
         function should_end_round_early() {
             // reset betting round state
-            const pot_amt = s_state.round.pot
             s_state.round = { pot: 0, bet_amt: 0 }
             s_state.players.forEach(player => {
                 player.cur_round_bet = 0
@@ -425,7 +424,10 @@ async function start_local_server() {
             if (folded_players.length != players.length - 1) return false
 
             const winner_id = players.findIndex(p => !p.folded)
-            players[winner_id].money += pot_amt
+            const pot_total = s_state.pots.reduce((total, pot) => {
+                return total + pot.amount
+            }, 0)
+            players[winner_id].money += pot_total
             const round_end_message = {
                 message: "round end",
                 state: { winner: winner_id }
