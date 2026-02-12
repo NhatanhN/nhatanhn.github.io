@@ -90,7 +90,9 @@ body {
     display: flex;
     gap: 10px;
     height: 40px;
+    min-width: 0;
     padding: 4px;
+    width: 100%;
 }
 
 #taskbar-start,

@@ -352,7 +352,8 @@ async function start_local_server() {
                     return { player_id, checked: true, next_player }
                 }
                 case "call": {
-                    const amt = s_state.round.bet_amt - player.cur_round_bet
+                    let amt = s_state.round.bet_amt - player.cur_round_bet
+                    amt = amt < 0 ? player.money : amt
                     place_bet(player_id, amt)
                     console.log(`${id_to_name(player_id)} called for ${amt}`)
                     return { player_id, called: amt, next_player }
