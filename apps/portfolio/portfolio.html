@@ -18,9 +18,8 @@
     <h4 id="nav-header">Navigation</h4>
     <nav>
         <a href="#movie-browser">Movie Browser</a>
-        <a href="#file-viewer">File Viewer</a>
+        <a href="#poker-server">Poker Web App</a>
         <a href="#location-tracker">Location Tracker</a>
-        <a href="#note-taker">Note Taker</a>
     </nav>
     <section id="movie-browser">
         <h2>Movie Browser</h2>
@@ -55,29 +54,23 @@
         </div>
     </section>
 
-    <section id="file-viewer">
-        <h2>File Viewer</h2>
+    <section id="poker-server">
+        <h2>Poker Web App</h2>
         <div class="description">
             <p>
-                A Spring Boot server that allows for file retrieval and storage. Access is controlled by a user's access
-                level, with low access levels meaning fewer files you have permission to view.
-                Also does stuff like connect to a MySql database, encrypt (and decrypt) files on disk, and expose a
-                REST api to communicate with. 
-                <br>
-                <br>
-                I also wrote some unit and integration tests for it.
-                <br>
-                <span>_(:3」∠)_</span>
+                A web application to play a game of poker with others online.
             </p>
-            <img src="./assets/file-viewer.gif">
+            <img src="./assets/poker.png">
         </div>
 
         <h3>Technologies Used <span>▶</span></h3>
         <div class="collapsible" style="display: none; height: 0">
             <ul>
-                <li>java</li>
-                <li>spring boot</li>
-                <li>mysql</li>
+                <li>python</li>
+                <li>fastapi</li>
+                <li>websockets</li>
+                <li>docker</li>
+                <li>microsoft azure container apps</li>
             </ul>
         </div>
     </section>
@@ -103,28 +96,6 @@
                     <li>dynamodb (database)</li>
                     <li>lambda (server)</li>
                 </ul>
-            </ul>
-        </div>
-    </section>
-
-    <section id="note-taker">
-        <h2>Note Taker</h2>
-        <div class="description">
-            <p>
-                A website with a text editor that support image insertion.
-                Allows you to take notes and save them to your account, as well export them to a .pdf file.
-            </p>
-            <img src="./assets/note-taker.gif">
-        </div>
-
-        <h3>Technologies Used <span>▶</span></h3>
-        <div class="collapsible" style="display: none; height: 0">
-            <ul>
-                <li>javascript</li>
-                <li>react</li>
-                <li>node.js</li>
-                <li>sqlite</li>
-                <li>json web tokens</li>
             </ul>
         </div>
     </section>

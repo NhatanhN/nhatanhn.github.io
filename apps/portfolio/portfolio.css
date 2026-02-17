@@ -48,16 +48,6 @@ ul>ul {
     animation: moveBackground 10s infinite alternate linear;
 }
 
-/*
-#timeline {
-    background: #833AB4;
-    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 33%, rgba(252, 176, 69, 1) 66%, rgba(131, 58, 180, 1) 100%);
-    background-clip: text;
-    color: transparent;
-    animation: moveBackground 10s infinite alternate linear;
-}
-*/
-
 @keyframes moveBackground {
     from {
         background-position: 0px;
@@ -79,6 +69,8 @@ nav {
     justify-content: center;
     flex-wrap: wrap;
     margin: 5px 0;
+    align-items: center;
+    column-gap: 1.5ch;
 }
 
 nav a {
@@ -195,26 +187,17 @@ div[data-snack-id] {
 
 /* movie browser section end */
 
-/* file viewer section start */
+/* poker server section start */
 
-#file-viewer .description span {
-    display: none;
-    white-space: nowrap;
-    font-size: 14px;
-    position: relative;
-    bottom: -19px;
-    right: -16vw;
+#poker-server>.collapsible {
+    height: 120px;
 }
 
-#file-viewer>.collapsible {
-    height: 80px;
+img[src="./assets/poker.png"] {
+    width: 300px;
 }
 
-img[src="./assets/file-viewer.gif"] {
-    width: 320px;
-}
-
-/* file viewer section end */
+/* poker server section end */
 
 /* location tracker section */
 
@@ -227,18 +210,6 @@ img[src="./assets/location-tracker-ui.jpg"] {
 }
 
 /* location tracker section end */
-
-/* note taker section */
-
-img[src="./assets/note-taker.gif"] {
-    width: 320px;
-}
-
-#note-taker>.collapsible {
-    height: 121px;
-}
-
-/* note taker section end*/
 
 footer {
     display: flex;
