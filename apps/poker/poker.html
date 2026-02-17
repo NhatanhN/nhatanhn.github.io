@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./poker.css">
+    <link rel="stylesheet" href="./poker_client.css">
 
     <title>poker</title>
 </head>
@@ -14,10 +15,10 @@
         <div>
             <p>Poker</p>
             <div id="welcome-btn-container">
-                <button id="btn-solo">
+                <button id="btn-solo" disabled style="cursor: not-allowed;">
                     play solo
                 </button>
-                <button id="btn-lobby" disabled style="cursor: not-allowed;">
+                <button id="btn-lobby">
                     join lobby
                 </button>
                 <button id="btn-attrib">
@@ -30,8 +31,19 @@
 
     <div id="lobby-select" style="display: none;">
         <button id="btn-lobby-back">back</button>
-        <p>work in progress |ω・）</p>
+        <button id="btn-new-lobby">create a lobby</button>
+        <h2>Join a Lobby</h2>
+        <div id="lobby-container">
+            <p class="loading-text">Loading</p>
+        </div>
 
+        <div id="new-lobby-container" style="display: none;">
+            <form id="new-lobby-form" autocomplete="off">
+                <input type="text" name="lobby_name" placeholder="Enter a name">
+                <input type="submit">
+                <span></span>
+            </form>
+        </div>
     </div>
 
     <div id="game" style="display: none;">
@@ -61,7 +73,6 @@
                 <div id="table-card-13" class="card"></div>
                 <div id="table-card-14" class="card"></div>
                 <div id="decision-window">
-                    <button id="decision-ready" style="display: none;">ready</button>
                     <button id="decision-check" style="display: none;">check</button>
                     <button id="decision-bet" style="display: none;">bet</button>
                     <button id="decision-call" style="display: none;">call</button>
@@ -69,44 +80,49 @@
                     <button id="decision-fold" style="display: none;">fold</button>
                     <div id="bet-select" style="opacity: 0; pointer-events: none;">
                         <div>Select your bet:</div>
-                        <input type="range" min="0" max="10" step="1">
+                        <input type="range" min="1" max="10" step="1">
                         <button id="bet-select-back">Back</button>
                         <button id="bet-select-confirm">Confirm</button>
                     </div>
                 </div>
             </div>
-            <div id="g-p1">
-                <img src="./assets/cat.svg">
+            <div id="g-p1" style="opacity: 0;">
+                <img src="">
                 <p>You</p>
                 <div class="player-info"></div>
             </div>
-            <div id="g-p2">
-                <img src="./assets/crow.svg">
+            <div id="g-p2" style="opacity: 0;">
+                <img src="">
                 <p>Crow</p>
                 <div class="player-info"></div>
             </div>
-            <div id="g-p3">
-                <img src="./assets/dog.svg">
+            <div id="g-p3" style="opacity: 0;">
+                <img src="">
                 <p>Dog</p>
                 <div class="player-info"></div>
             </div>
-            <div id="g-p4">
-                <img id="mouse" class="mouse" src="./assets/mouse.svg">
+            <div id="g-p4" style="opacity: 0;">
+                <img src="">
                 <p>Mouse</p>
                 <div class="player-info"></div>
             </div>
-            <div id="g-toast"></div>
-            <div id="g-toast-2"></div>
-            <div id="g-hand">
+            <div id="g-toast" style="display: none;"></div>
+            <div id="g-toast-2" style="display: none;"></div>
+            <div id="g-hand" style="opacity: 0;">
                 <div id="hand-1" class="card"></div>
                 <div id="hand-2" class="card"></div>
             </div>
-            <div id="g-flop">
+            <div id="g-flop" style="opacity: 0;">
                 <div id="flop-1" class="card" style="display: none;"></div>
                 <div id="flop-2" class="card" style="display: none;"></div>
                 <div id="flop-3" class="card" style="display: none;"></div>
                 <div id="flop-4" class="card" style="display: none;"></div>
                 <div id="flop-5" class="card" style="display: none;"></div>
+            </div>
+
+            <div id="g-game-over" style="opacity: 0; display: none;">
+                <h1>Game Over</h1>
+                <p></p>
             </div>
         </div>
     </div>
@@ -133,7 +149,11 @@
     </div>
 </body>
 
+<!--
+    <script src="./poker_client.js"></script>
+    <script src="./poker_local_server.js"></script>
+-->
 <script src="./poker.js"></script>
-<script src="./poker_local_server.js"></script>
+<script src="./poker_client2.js"></script>
 
 </html>

@@ -1,0 +1,332 @@
+#game {
+    caret-color: transparent;
+    overflow: hidden;
+    padding: 8px;
+}
+
+#btn-leave {
+    background: #ddddddd4 none;
+    left: 4px;
+    padding: .4ch .8ch;
+    position: absolute;
+    top: 4px;
+}
+
+#game>div {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    height: 100%;
+}
+
+#g-dealer,
+#g-p1,
+#g-p2,
+#g-p3,
+#g-p4 {
+    display: grid;
+    height: 22vmin;
+    place-items: center;
+    place-self: center;
+    text-align: center;
+    width: 22vmin;
+}
+
+p {
+    margin: 0;
+}
+
+#g-dealer {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+#game img {
+    display: block;
+    height: 13vmin;
+    max-height: 100px;
+    max-width: 100px;
+    width: 13vmin;
+}
+
+#g-table {
+    background: seagreen;
+    background-image: url(./assets/dark-geometric.png);
+    border: groove 10px sienna;
+    box-shadow: 4px 4px 4px gray;
+    grid-column: 2/5;
+    grid-row: 2/5;
+    height: 100%;
+    padding: 6px;
+    position: relative;
+    width: 100%;
+}
+
+#g-table>.card {
+    bottom: calc(100% - max(10vmin, 50px) - 6px);
+    height: max(10vmin, 50px);
+    opacity: 1;
+    position: absolute;
+    right: calc(100% - max(7.5vmin, 37.5px) - 6px);
+    transform: rotate(0deg);
+    transition: 1s ease-in-out;
+    width: max(7.5vmin, 37.5px);
+}
+
+#g-table>.card>p {
+    font-size: max(2.5vmin, 12.5px);
+}
+
+.card {
+    background-color: #7159b0;
+    background-image: url(./assets/gray-floral.png);
+    background-position: 6px;
+    background-size: 280%;
+    border: solid;
+    border-radius: 5px;
+    height: max(20vmin, 100px);
+    position: absolute;
+    transition: background-color .5s linear;
+    width: max(15vmin, 75px);
+}
+
+.card>p:first-child {
+    left: .25ch;
+    position: absolute;
+    top: -.25ch;
+}
+
+.card>p:last-child {
+    bottom: -.25ch;
+    position: absolute;
+    right: .25ch;
+    transform: rotate(180deg);
+}
+
+#decision-window {
+    display: grid;
+    height: calc(100% - 12px);
+    place-content: center;
+    position: absolute;
+    width: calc(100% - 12px);
+}
+
+#decision-window>button {
+    backdrop-filter: brightness(.5) blur(2px);
+    background: none;
+    border-color: slategray;
+    color: wheat;
+    font-size: medium;
+    padding: .25ch 2ch;
+}
+
+#decision-window>button:hover {
+    filter: brightness(1.25);
+}
+
+#bet-select {
+    backdrop-filter: brightness(.5) blur(2px);
+    border: 2px solid wheat;
+    color: wheat;
+    display: grid;
+    height: 20ch;
+    place-items: center;
+    place-self: center;
+    position: absolute;
+    transition: .2s ease-in-out;
+    width: 20ch;
+}
+
+#g-p1 {
+    grid-column: 2/3;
+    grid-row: -2/-1;
+    position: relative;
+}
+
+.player-info {
+    backdrop-filter: blur(1.5px);
+    background-color: #111111ba;
+    color: #d9cec0;
+    font-size: small;
+    left: 0;
+    margin: .5ch;
+    opacity: 0;
+    padding: .5ch;
+    position: absolute;
+    right: 0;
+    text-align: left;
+    transition: .15s ease-in-out;
+}
+
+#g-p1:hover .player-info,
+#g-p2:hover .player-info,
+#g-p3:hover .player-info,
+#g-p4:hover .player-info {
+    opacity: 1;
+}
+
+#g-p2 {
+    grid-column: -2/-1;
+    grid-row: 4/5;
+    position: relative;
+}
+
+#g-p3 {
+    grid-column: -2/-1;
+    grid-row: 3/4;
+    position: relative;
+}
+
+#g-p4 {
+    grid-column: -2/-1;
+    grid-row: 2/3;
+    position: relative;
+}
+
+.current-turn {
+    background: radial-gradient(#8bc9ff, transparent 70%);
+}
+
+.winner {
+    background: radial-gradient(#35c418, transparent 70%);
+}
+
+.folded {
+    background: radial-gradient(#818181d2 40%, transparent 60%);
+}
+
+#g-toast {
+    align-self: end;
+    background: #00000012;
+    border-left: 2px solid slategray;
+    grid-column: 1/2;
+    grid-row: -3/-1;
+    margin: 4px;
+    opacity: .7;
+    padding: 4px;
+    transition: .1s ease-in-out;
+}
+
+#g-toast-2 {
+    animation: toast2fade 3.5s cubic-bezier(.63, 0, .82, .43) forwards;
+    background: #aaa;
+    border-right: 2px solid slategray;
+    display: none;
+    margin: .5ch;
+    padding: .5ch;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+@keyframes toast2fade {
+    100% {
+        opacity: .6;
+    }
+}
+
+#g-toast:hover {
+    background: #00000018;
+    opacity: 1;
+}
+
+#g-hand {
+    bottom: -70px;
+    font-size: 0;
+    grid-column: -3/-1;
+    grid-row: -2/-1;
+    position: relative;
+    transition: 3.5s cubic-bezier(.02, .96, .34, .98);
+}
+
+#g-hand:hover {
+    bottom: -35px;
+}
+
+#g-hand:hover .card {
+    background-color: azure;
+    background-image: none;
+    font-size: initial;
+}
+
+#g-hand p {
+    font-size: 0;
+}
+
+#g-hand:hover p,
+#g-flop p {
+    font-size: max(4vmin, 20px)
+}
+
+#hand-1 {
+    right: 40px;
+    transform: rotate(-10deg);
+}
+
+#hand-2 {
+    right: 20px;
+    transform: rotate(5deg);
+}
+
+#g-flop {
+    grid-column: 2/5;
+    grid-row: 1/2;
+    position: relative;
+    top: -70px;
+    transition: 3.5s cubic-bezier(.02, .96, .34, .98);
+}
+
+#g-flop:hover {
+    top: 5px
+}
+
+#flop-1 {
+    left: 25px;
+    transform: rotate(5deg);
+}
+
+#flop-2 {
+    left: 50px;
+    transform: rotate(5deg);
+}
+
+#flop-3 {
+    left: 75px;
+    transform: rotate(5deg);
+}
+
+#flop-4 {
+    left: 100px;
+    transform: rotate(5deg);
+}
+
+#flop-5 {
+    left: 125px;
+    transform: rotate(5deg);
+}
+
+#g-game-over {
+    background: #dbdbdb;
+    border: #535353 outset 4px;
+    bottom: 8px;
+    box-shadow: 4px 4px 0 #57575769;
+    padding: 1.5ch 3ch;
+    position: absolute;
+    transition: .5s;
+    width: 70%;
+}
+
+#g-game-over:hover {
+    opacity: .15;
+}
+
+#g-game-over>h1 {
+    color: darkslateblue;
+    margin: 20px 0;
+}
+
+#g-game-over>p {
+    font-size: large;
+    margin: 20px 0;
+}
