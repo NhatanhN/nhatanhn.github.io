@@ -22,25 +22,46 @@
         <h1>Welcome to my <span>webpage!</span></h1>
     </section>
     <section id="questions">
-        <h2>About me?</h2>
+
+        <h2>About Me</h2>
+        <dl>
+            <dt>Description</dt>
+            <dd>From a small-ish city in Southeast Texas. I have a degree in computer science from Lamar University.
+            </dd>
+            <dt>Interest</dt>
+            <dd>I like video games, like Baldur's Gate 3, Portal, and Counter Strike 2. I like music, like the RAH band,
+                Mai Yamane, Laufey.</dd>
+            <dt>Programming</dt>
+            <dd>My interest in programming starting from video games probably, but it stuck since there's many cool
+                things people are programming. I like coding in Python, learned Java in college, and program in
+                Javascript for the web. I can program website and deploy on the cloud, make simple but helpful scripts
+                for problems like tax calculators, and tinker with concepts that interest me like robotics, shader
+                graphics, AI, and other sorts of things.
+            </dd>
+
+            <dt>Goals</dt>
+            <dd>To become continue to better my programming skills. To accumulate more knowledge to program whatever
+                things I want.</dd>
+            <dt>Misc.</dt>
+            <dd>Add this bookmarklet to your browser (by copying pasting it in a bookmark url field) to make any light
+                themed website dark themed or vice versa:
+                <div class="code">
+                    javascript:(function() { const html = document.documentElement; html.style.filter =
+                    html.style.filter == "invert(100%)" ? "" : "invert(100%)"})();
+                </div>
+            </dd>
+        </dl>
+
+        <h2>This Page</h2>
         <p>
-            I am from Texas, a student in computer science at Lamar University.
-            I can do web programming, build mobile apps, and do a little backend programming.
-            I like to learn new things in programming, and try my hand at any coding idea that interests me.
+            You're currently viewing my "welcome" window. Open another window by poking the desktop icons.
         </p>
-        <h2>About this page?</h2>
-        <p>
-            I've built this page to showcase my portfolio. To navigate, click on the desktop icons to open a window. You
-            can also click on the header buttons to maximize or close the window, or click and drag the top of the
-            window to move it.
-            <br />
-            <br />
-            It also contains smaller-scale things like a calculator and a snake game.
-        </p>
-        <h2>Other personal projects?</h2>
+
+        <h2>Other Code</h2>
         <p>
             <a id="portfolio-link">Click here to open the portfolio window</a>
         </p>
+
     </section>
     <div id="landscape-img-container">
         <img src="./assets/pixelated-landscape.png" alt="pixelated cloudy landscape image">
